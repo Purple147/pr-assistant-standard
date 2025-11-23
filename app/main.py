@@ -1,11 +1,15 @@
+# app/main.py
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 
-app = FastAPI(title="PR Assistant (dev)")
+app = FastAPI(title="PR Assistant (Standard)", version="0.1.0")
 
 @app.get("/health")
-async def health():
-    return {"status": "ok"}
+def health():
+    return JSONResponse({"status": "ok"})
 
-@app.get("/")
-async def root():
-    return {"msg": "PR Assistant - dev server"}
+# نمونه endpoint ساده برای تست webhook payload
+@app.post("/webhook")
+async def webhook(payload: dict):
+    # فقط برای تست: ذخیرهٔ payload یا لاگ کردن
+    return {"received": True, "keys": list(payload.keys())}
