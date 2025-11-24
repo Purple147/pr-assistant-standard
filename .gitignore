@@ -1,11 +1,22 @@
-.env
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-*.log
-created_session.json
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# dotenv
+.env
+.env.*
+
+# IDEs
+.idea/
 .vscode/
-.DS_Store
-*.sqlite
-node_modules/
-h" || true
-no .env tracked
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
